@@ -13,7 +13,12 @@ const PORT = process.env.PORT || 5000;
 
 // 3. Middleware (Middleman for data)
 app.use(express.json()); // Allows us to receive JSON data from the frontend
-app.use(cors());         // Allows cross-origin requests
+// app.use(cors());         // Allows cross-origin requests
+app.use(cors({
+    origin: 'https://ledger-app-flax.vercel.app/', // Replace with your actual Vercel URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true
+}));
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/auth', authRoutes);
 
