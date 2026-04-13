@@ -24,7 +24,8 @@ app.get('/', (req, res) => {
 
 // 5. Connect to MongoDB and Start Server
 // We use 'mongodb://127.0.0.1:27017/ledgerDB' for local development
-mongoose.connect('mongodb://127.0.0.1:27017/ledgerDB')
+// mongoose.connect('mongodb://127.0.0.1:27017/ledgerDB')
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         console.log('✅ Connected to MongoDB');
         app.listen(PORT, () => {
