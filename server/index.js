@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json()); // Allows us to receive JSON data from the frontend
 // app.use(cors());         // Allows cross-origin requests
 app.use(cors({
-    origin: 'https://ledger-app-flax.vercel.app/login', // Replace with your actual Vercel URL
+    origin: 'https://ledger-app-flax.vercel.app', // Replace with your actual Vercel URL
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true
 }));
